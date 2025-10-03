@@ -120,6 +120,7 @@ public class Responder
                              """);
         defaultResponses.add("That's not a bug, it's a feature!");
         defaultResponses.add("Could you elaborate on that?");
+        defaultResponses.add("Are you Black");
     }
     /**
      * Generate a response.

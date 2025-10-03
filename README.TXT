@@ -18,3 +18,7 @@ dependent method get  put
     System.out.println(key);
 }
  33
+ 34.they both have one element and they both use get method to their element
+ 35 Arraylist allow duplicates meanwhile the HashSet doesnt allow duplicate
+ 36.no ther is no problem
+ 37.
