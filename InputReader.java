@@ -30,8 +30,11 @@ public class InputReader
     {
         // print prompt
         System.out.print("> ");         
-        String inputLine = reader.nextLine();
-
+        String inputLine = reader.nextLine().trim().toLowerCase();
+        
+        String[] inputArray = inputLine.split("");
+        
+        Hashset<String> word; InputArray;
         return inputLine;
     }
 }

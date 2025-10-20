@@ -16,7 +16,7 @@ public class Responder
     
     private HashMap<String, String> responseMap;
     // Default responses to use if we don't recognise a word.
-    private ArrayList<String> defaultResponses;
+    private HashMap<String,String> defaultResponses;
     private Random randomGenerator;
 
     /**
@@ -25,7 +25,7 @@ public class Responder
     public Responder()
     {
         responseMap = new HashMap<>();
-        defaultResponses = new ArrayList<>();
+        defaultResponses = new HashMap();
         fillResponseMap();
         fillDefaultResponses();
         randomGenerator = new Random();
@@ -105,30 +105,31 @@ public class Responder
                         """);
     }
     private void fillDefaultResponses(){
-        defaultResponses.add("That sounds odd. Could you describe that problem in more detail?");
-        defaultResponses.add("""
+        defaultResponses.put("weird","That sounds odd. Could you describe that problem in more detail?");
+        defaultResponses.put("oh","""
                              No other customer has ever complained about this before.
                              What is your system configuration?
                              """);
-        defaultResponses.add("That sounds interesting. Tell me more...");
-        defaultResponses.add("I need a bit more information on that.");
-        defaultResponses.add("Have you checked that you do not have a dll conflict?");
-        defaultResponses.add("That is explained in the manual. Have you read the manual?");
-        defaultResponses.add("""
+        defaultResponses.put("Alan","That sounds interesting. Tell me more...");
+        defaultResponses.put("67","I need a bit more information on that.");
+        defaultResponses.put("elai","Have you checked that you do not have a dll conflict?");
+        defaultResponses.put("ju","That is explained in the manual. Have you read the manual?");
+        defaultResponses.put( "for","""
                              Your description is a bit wishy-washy. Have you got an expert
                              there with you who could describe this more precisely?
                              """);
-        defaultResponses.add("That's not a bug, it's a feature!");
-        defaultResponses.add("Could you elaborate on that?");
-        defaultResponses.add("Are you Black");
+        defaultResponses.put("al","That's not a bug, it's a feature!");
+        defaultResponses.put("james","Could you elaborate on that?");
+        defaultResponses.put("black","Are you Black");
     }
     /**
      * Generate a response.
      * @return   A string that should be displayed as the response
      */
-    public String generateResponse()
+    public String generateResponse(String word)
     {
-        return "That sounds interesting. Tell me more...";
+        return responseMapesponse.get(word);
+        
     }
 }
 
